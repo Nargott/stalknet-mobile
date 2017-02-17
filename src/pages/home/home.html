@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Stalk Net
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addMessage()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let message of messages | async" (click)="showOptions(message.$key, message.title)">
+      {{message.title}}
+    </ion-item>
+  </ion-list>
+</ion-content>
